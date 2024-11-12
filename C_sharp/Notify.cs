@@ -20,6 +20,8 @@ namespace C_sharp
         public const string Yesterday = "Is yesterdaay";
         public const string Tomorrow = "Is tomorrow";
         public const string OtherDay = "Is other day";
+        public const string AddedStudent = "Added student";
+        public const string UpdatedStudent = "Updated student";
 
     }
 }

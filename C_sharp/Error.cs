@@ -12,5 +12,7 @@ namespace C_sharp
         public const string WhiteSpaceString = "String is white space";
         public const string InvalidCount = "Invalid count";
         public const string NullDatetime = "Datetime is null";
+        public const string InvalidStudentId = "Student not found";
+        public const string StudentExists = "Student exists";
     }
 }
