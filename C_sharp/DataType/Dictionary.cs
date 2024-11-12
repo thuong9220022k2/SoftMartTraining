@@ -71,10 +71,10 @@ namespace C_sharp
             }
         }
 
-        static void Main(string[] args)
-        {
-            DictionnaryHandler dict = new DictionnaryHandler();
-            Console.WriteLine(dict.AddStudent(4, "Mathew"));
-        }
+        // static void Main(string[] args)
+        // {
+        //     DictionnaryHandler dict = new DictionnaryHandler();
+        //     Console.WriteLine(dict.AddStudent(4, "Mathew"));
+        // }
     }
 }
