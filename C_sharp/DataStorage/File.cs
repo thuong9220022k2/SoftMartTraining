@@ -43,34 +43,37 @@ namespace C_sharp.DataType
             List<string> subStrings = GetSubString(content);
             List<int> numbers = new List<int>();
             var outputPath = "/home/thuong/SoftMartTraining/C_sharp/DataStorage/output1.txt";
-            foreach(string subString in subStrings){
-                bool checkType = CheckTypeValue(subString);
-                if(!checkType){
-                    var message = $"Invalid number {subString}";
-                    WriteFile(outputPath, message);
-                    return;
+            
+            try{
+                foreach(string subString in subStrings){
+                    bool checkType = CheckTypeValue(subString);
+                    if(!checkType){
+                        var message = $"Invalid number {subString}";
+                        WriteFile(outputPath, message);
+                        return;
+                    }
+                    else{
+                        int number = int.Parse(subString);
+                        if(number >= 0 && number < 100000){
+                           numbers.Add(number);
+                        }
+                        else {
+                           number = -1;
+                           numbers.Add(number);
+                        }
+                    } 
                 }
-                else{
-                    int number = int.Parse(subString);
-                    if(number >= 0 && number < 100000){
-                       numbers.Add(number);
-                    }
-                    else {
-                       number = -1;
-                       numbers.Add(number);
-                    }
-                } 
+                numbers.Sort();
+                string sortedContent = "";
+                foreach(int number in numbers){
+                    sortedContent += number + " ";
+                }
+                WriteFile(outputPath, sortedContent);
+            }catch(Exception e){
+                Console.WriteLine(e.Message);
+                throw new Exception(e.Message);
             }
-            numbers.Sort();
-            foreach(int number in numbers){
-                Console.WriteLine(number);
-            }
-            string sortedContent = "";
-            foreach(int number in numbers){
-                sortedContent += number + " ";
-            }
-            WriteFile(outputPath, sortedContent);
-            Console.WriteLine("Sorted file successfully");
+            
         }
 
         // static void Main(string[] args){
