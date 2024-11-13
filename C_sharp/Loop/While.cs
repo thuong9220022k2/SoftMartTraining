@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace C_sharp
+namespace C_sharp.Loop
 {
     public class WhileHandler
     {

@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 
-namespace C_sharp
+namespace C_sharp.Loop
 {
     public class LoopHandler
     {

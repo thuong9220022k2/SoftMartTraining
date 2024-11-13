@@ -3,7 +3,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace C_sharp
+namespace C_sharp.DataType
 {
     public static class Error
     {
