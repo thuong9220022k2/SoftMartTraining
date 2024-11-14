@@ -99,11 +99,17 @@ namespace C_sharp.DataType
             }
         }
 
-        // static void Main(string[] args)
-        // {
-        //     ListHandler listHandler = new ListHandler();
-        //     listHandler.Fibonaci(10);
-        // }
+        public void testExeception()
+        {
+            try { } catch (Exception ex) { throw ; }
+            try { } catch (Exception ex) { throw ex; }
+            try { } catch (Exception ex) { throw new Exception(); }
 
-    }
+            // static void Main(string[] args)
+            // {
+            //     ListHandler listHandler = new ListHandler();
+            //     listHandler.Fibonaci(10);
+            // }
+
+        }
 }

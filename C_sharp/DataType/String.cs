@@ -12,24 +12,23 @@ namespace C_sharp.DataType
                 var message = Error.NullString;
                 return message;
             }
-            else if (str.Length == 0)
+
+            if (str.Length == 0)
             {
                 var message = Error.EmptyString;
                 return message;
             }
-            else if (string.IsNullOrWhiteSpace(str))
+
+            if (string.IsNullOrWhiteSpace(str))
             {
-                var message = Error.WhiteSpaceString;
-                return message;
+                return Error.WhiteSpaceString;
             }
-            else
-            {
-                return str;
-            }
+            return str;
         }
         public string RemoveTrimChar(string str)
         {
             var validString = CheckString(str);
+            // add condition list of trim char
             if (validString != Error.EmptyString && validString != Error.NullString && validString != Error.WhiteSpaceString)
             {
                 return validString.Trim();
@@ -48,6 +47,7 @@ namespace C_sharp.DataType
 
         public string ConvertToUpperCase(string str)
         {
+            //method help upper char after space
             var validString = CheckString(str);
             if (validString != Error.EmptyString && validString != Error.NullString && validString != Error.WhiteSpaceString)
             {
@@ -118,6 +118,7 @@ namespace C_sharp.DataType
 
         public bool CompareStrings(string str1, string str2)
         {
+            //equal method to compare string(string.equal apply nullable vlaue)
             var str1Length = str1.Length;
             var str2Length = str2.Length;
             var lowerStr1 = str1.ToLower();
@@ -165,7 +166,7 @@ namespace C_sharp.DataType
         public string TransformString(string str)
         {
             var lowerString = str.ToLower();
-            var listIndex = GetAllIndexSubString("abc", lowerString);
+            var listIndex = GetAllIndexSubString("abc", lowerString); // Abc Def BAC -> DEG replace  method
             for (int i = 0; i < str.Length; i++)
             {
                 if (listIndex.Contains(i))
@@ -179,6 +180,7 @@ namespace C_sharp.DataType
         public string PrintString(string str)
         {
             var newString = $"Hiển thị chuỗi: Kính chào ông {str}. Chúc ngon miệng.";
+            //string.format() method
             return newString;
         }
 

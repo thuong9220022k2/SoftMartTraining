@@ -1,10 +1,12 @@
 //1
 SELECT flex_employee.name, flex_employee.email , flex_organization.* 
 FROM flex_employee
-JOIN flex_organization
+JOIN flex_organization 
 ON flex_employee.employee_id = flex_organization.parent_id 
 JOIN flex_organization_employee
-ON flex_employee.employee_id = flex_organization_employee.employee_id;
+ON flex_employee.employee_id = flex_organization_employee.employee_id
+WHERE flex_organization.deleted = null;
+
 //2
 SELECT flex_employee.name, flex_employee.email 
 FROM flex_employee
@@ -65,6 +67,7 @@ JOIN flex_organization_employee
 ON flex_organization_employee.employee_id = flex_employee.employee_id
 )
 WHERE od = 1;
+// same create_dtg row_number ? 
 //9
 SELECT flex_organization.parent_id 
 FROM flex_organization
@@ -72,11 +75,11 @@ WHERE flex_organization.organization_id IN (
 SELECT flex_organization_employee.organization_id 
 FROM flex_organization_employee
 GROUP BY flex_organization_employee.organization_id
-HAVING COUNT(flex_organization_employee.employee_id) > 0
+HAVING COUNT(1) > 0
 );
 //10
 UPDATE flex_organization 
-SET flex_organization.name = flex_organization.name + '_SV' 
+SET flex_organization.name = flex_organization.name || '_SV' 
 WHERE flex_organization.organization_id IN (
 SELECT flex_organization_employee.organization_id
 FROM flex_organization_employee

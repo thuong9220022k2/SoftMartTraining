@@ -10,7 +10,7 @@ namespace C_sharp.Loop
         {
             Console.WriteLine("Enter value :");
             string input = Console.ReadLine(); //format Date Thang/Ngay/Nam
-            DateTime.TryParse(input, out DateTime datetimeValue);
+            DateTime.TryParse(input, out DateTime datetimeValue); //add format datetime 
             // Console.WriteLine(datetimeValue.DayOfWeek);
             var currentDay = datetimeValue.DayOfWeek;
             switch (currentDay)

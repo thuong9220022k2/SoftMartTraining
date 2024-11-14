@@ -24,7 +24,7 @@ namespace C_sharp.DataType
                 return message;
             }
         }
-
+        //distance int <2^31, 2^31-1>
         public int GetAbsValue(int number)
         {
             return Math.Abs(number);
