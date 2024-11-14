@@ -1,4 +1,4 @@
-﻿//1
+//1
 SELECT flex_employee.name, flex_employee.email , flex_orgnization 
 FROM flex_employee 
 JOIN flex_orgnization 
@@ -34,3 +34,5 @@ WHERE flex_employee.employee_id IN (
     WHERE flex_orgnization.code = 'PB_001';
 );
 //5
+check
+
