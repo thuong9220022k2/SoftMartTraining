@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="DataStorage\DataTable\Excel.sql" />
     <Compile Include="DataStorage\DataTable\StudentMng.sql" />
   </ItemGroup>
 
