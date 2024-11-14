@@ -34,5 +34,5 @@ WHERE flex_employee.employee_id IN (
     WHERE flex_orgnization.code = 'PB_001';
 );
 //5
-check
+check xem oke chua
 
