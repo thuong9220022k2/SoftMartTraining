@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Class>
+	<ClassID>1</ClassID>
+	<Name>THPT BAC GIANG</Name>
+	<Desc>It's a peaceful and green school. It's great when have chance to learn here</Desc>
+	<Students>
+		<Student>
+			<StudentID>1</StudentID>
+			<Name>Nguyen The Thuong</Name>
+			<DOB>09/02/2002</DOB>
+			<Code>SV001</Code>
+			<Math>9</Math>
+			<Phys>8</Phys>
+		</Student>
+		<Student>
+			<StudentID>2</StudentID>
+			<Name>Nguyen Van A</Name>
+			<DOB>09/02/2002</DOB>
+			<Code>SV002</Code>
+			<Math>9</Math>
+			<Phys>8</Phys>
+		</Student>
+	</Students>
+</Class>
