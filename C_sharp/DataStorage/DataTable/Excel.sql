@@ -56,12 +56,34 @@ GROUP BY flex_organization_employee.organization_id
 HAVING COUNT(flex_organization_employee.employee_id) > 10
 );
 //8
-SELECT flex_employee.name
+SELECT name
 FROM (
 SELECT flex_employee.name,flex_organization_employee.organization_id, flex_employee.created_dtg,
 ROW_NUMBER() OVER (PARTITION BY flex_organization_employee.organization_id ORDER BY flex_employee.created_dtg DESC) AS od
-FROM flex__employee
+FROM flex_employee
 JOIN flex_organization_employee
-ON flex_organization_employe.employee_id = flex_employee.employee_id
+ON flex_organization_employee.employee_id = flex_employee.employee_id
 )
 WHERE od = 1;
+//9
+SELECT flex_organization.parent_id 
+FROM flex_organization
+WHERE flex_organization.organization_id IN (
+SELECT flex_organization_employee.organization_id 
+FROM flex_organization_employee
+GROUP BY flex_organization_employee.organization_id
+HAVING COUNT(flex_organization_employee.employee_id) > 0
+);
+//10
+UPDATE flex_organization 
+SET flex_organization.name = flex_organization.name + '_SV' 
+WHERE flex_organization.organization_id IN (
+SELECT flex_organization_employee.organization_id
+FROM flex_organization_employee
+WHERE flex_organization_employee.employee_id IN (
+SELECT flex_employee.employee_id
+FROM flex_employee
+WHERE flex_employee.user_name = 'NV_001'
+)
+);
+
